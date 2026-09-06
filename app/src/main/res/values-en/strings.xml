@@ -155,4 +155,33 @@
     <string name="moan_mid">Mic picked up a normal moan (medium volume): teasing can deepen a little.</string>
     <string name="moan_high_en">Mic picked up a loud moan/cry (high volume): lower intensity, soothe, don\'t push harder.</string>
     <string name="moan_mid_en">Mic picked up a normal moan (medium volume): teasing can deepen a little.</string>
+
+    <!-- Onboarding tour -->
+    <string name="tour_skip">Skip</string>
+    <string name="tour_back">Back</string>
+    <string name="tour_next">Next</string>
+    <string name="tour_done">Done</string>
+    <string name="tour_replay">Tour</string>
+    <string name="tour_step_index">%1$d / %2$d</string>
+    <string name="tour_step_settings_title">Open Settings</string>
+    <string name="tour_step_settings_body">Tap Settings (top right) to configure the AI and the Coyote device.</string>
+    <string name="tour_step_api_key_title">API Key</string>
+    <string name="tour_step_api_key_body">Paste your LLM API key. Official and proxy keys are not interchangeable — match it with Base URL.</string>
+    <string name="tour_step_base_url_title">Base URL</string>
+    <string name="tour_step_base_url_body">Enter the API endpoint (e.g. https://api.deepseek.com), not the provider homepage. Follow the provider docs for /v1.</string>
+    <string name="tour_step_model_title">Model name</string>
+    <string name="tour_step_model_body">Use the model id from your provider (e.g. deepseek-chat). A wrong name will fail the connection test.</string>
+    <string name="tour_step_test_title">Test connection</string>
+    <string name="tour_step_test_body">Tap Test connection to verify Key / URL / model. When it succeeds, tap Save.</string>
+    <string name="tour_step_save_title">Save</string>
+    <string name="tour_step_save_body">After a successful test, tap Save so settings apply immediately. Leaving API Key blank keeps the stored key.</string>
+    <string name="tour_step_connect_title">Connect Coyote (BLE)</string>
+    <string name="tour_step_connect_body">This app connects to the Coyote over phone Bluetooth directly — no QR code, and no DG-LAB App output switch. Grant Bluetooth (or location) permission, power on the Coyote nearby, tap Connect Coyote, then pick the strongest signal. Do not use this while the official App is already connected.</string>
+    <string name="tour_step_autopilot_title">Autopilot</string>
+    <string name="tour_step_autopilot_body">The Autopilot switch on the chat screen lets the AI advance from observation and chat. Turn it off when you want to pause.</string>
+    <string name="tour_step_safety_title">Safety</string>
+    <string name="tour_step_safety_body">There is no PC-style Space E-Stop on Android. To stop right away: (1) turn Autopilot off; (2) disconnect the Coyote in Settings.</string>
+    <string name="tour_step_done_title">You are set</string>
+    <string name="tour_step_done_body">Replay anytime from Settings → Tour at the top. Enjoy.</string>
+
 </resources>

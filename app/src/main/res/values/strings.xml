@@ -155,4 +155,33 @@
     <string name="moan_mid">麦克风检测到玩家发出普通呻吟/呜呜声（音量中等）：挑逗等级可逐渐增加，小幅加码。</string>
     <string name="moan_high_en">Mic picked up a loud moan/cry (high volume): lower intensity, soothe, don\'t push harder.</string>
     <string name="moan_mid_en">Mic picked up a normal moan (medium volume): teasing can deepen a little.</string>
+
+    <!-- 新手引导 tour -->
+    <string name="tour_skip">跳过</string>
+    <string name="tour_back">上一步</string>
+    <string name="tour_next">下一步</string>
+    <string name="tour_done">完成</string>
+    <string name="tour_replay">新手引导</string>
+    <string name="tour_step_index">%1$d / %2$d</string>
+    <string name="tour_step_settings_title">打开设置</string>
+    <string name="tour_step_settings_body">点右上角「设置」进入配置页，填写 AI 与设备相关选项。</string>
+    <string name="tour_step_api_key_title">填写 API Key</string>
+    <string name="tour_step_api_key_body">粘贴你的大模型 API Key。官方与中转站的密钥不通用，需与 Base URL 配套。</string>
+    <string name="tour_step_base_url_title">填写 Base URL</string>
+    <string name="tour_step_base_url_body">这里填 API 接口地址（例如 https://api.deepseek.com），不是官网首页。末尾一般带 /v1 或不带均可，按服务商文档。</string>
+    <string name="tour_step_model_title">选择模型名</string>
+    <string name="tour_step_model_body">填写服务商提供的模型名（如 deepseek-chat）。名称写错会导致测试失败。</string>
+    <string name="tour_step_test_title">测试连接</string>
+    <string name="tour_step_test_body">点「测试连接」确认 Key / URL / 模型可用。成功后再点「保存」写入本地。</string>
+    <string name="tour_step_save_title">保存配置</string>
+    <string name="tour_step_save_body">测试通过后点「保存」，配置立即生效。API Key 留空再保存则保持原密钥不变。</string>
+    <string name="tour_step_connect_title">连接郊狼（BLE）</string>
+    <string name="tour_step_connect_body">本应用通过手机蓝牙直连郊狼，无需扫码，也不用在官方 App 里切换输出。请先给蓝牙（或定位）权限，郊狼开机靠近后点「连接郊狼」，再在列表里选信号最强的设备。请勿在官方 App 已连接时使用。</string>
+    <string name="tour_step_autopilot_title">自动运行</string>
+    <string name="tour_step_autopilot_body">聊天页顶部的「自动运行」开关：开启后 AI 会按观察与对话自动推进。需要暂停时关掉它即可。</string>
+    <string name="tour_step_safety_title">安全提醒</string>
+    <string name="tour_step_safety_body">本应用没有电脑版那种空格键急停。需要立刻停下时：① 关闭「自动运行」；② 在设置里断开郊狼连接。</string>
+    <string name="tour_step_done_title">引导完成</string>
+    <string name="tour_step_done_body">之后可随时在设置页顶部点「新手引导」重新观看本教程。祝体验愉快。</string>
+
 </resources>

@@ -73,6 +73,7 @@ import com.indhg.aiforcoyote.ui.theme.Ink
 import com.indhg.aiforcoyote.ui.theme.Line
 import com.indhg.aiforcoyote.ui.theme.Muted
 import com.indhg.aiforcoyote.ui.theme.TextMain
+import com.indhg.aiforcoyote.ui.onboarding.tourTarget
 
 private val LevelGreen = Color(0xFF4ADE80)
 private val LevelRed = Color(0xFFF87171)
@@ -93,7 +94,7 @@ private fun roleAvatarRes(role: String): Int = when (role) {
 }
 
 @Composable
-fun SettingsScreen(vm: MainViewModel, onBack: () -> Unit) {
+fun SettingsScreen(vm: MainViewModel, onBack: () -> Unit, onReplayTour: () -> Unit = {}) {
     val settings by vm.settings.collectAsState()
     val dlcRefresh by vm.dlcRefresh.collectAsState()
     val context = LocalContext.current
@@ -127,6 +128,10 @@ fun SettingsScreen(vm: MainViewModel, onBack: () -> Unit) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(stringResource(R.string.settings), fontSize = 18.sp, fontWeight = FontWeight.Bold, color = Gold)
             Spacer(Modifier.weight(1f))
+            TextButton(
+                onClick = onReplayTour,
+                modifier = Modifier.tourTarget("tour_replay"),
+            ) { Text(stringResource(R.string.tour_replay), color = Gold) }
             TextButton(onClick = onBack) { Text(stringResource(R.string.back), color = Muted) }
         }
 
@@ -152,7 +157,7 @@ fun SettingsScreen(vm: MainViewModel, onBack: () -> Unit) {
         OutlinedTextField(
             value = apiKey,
             onValueChange = { apiKey = it },
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().tourTarget("api_key"),
             label = { Text("API Key", fontSize = 12.sp) },
             placeholder = {
                 Text(
@@ -167,14 +172,14 @@ fun SettingsScreen(vm: MainViewModel, onBack: () -> Unit) {
         OutlinedTextField(
             value = baseUrl,
             onValueChange = { baseUrl = it },
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().tourTarget("base_url"),
             label = { Text("Base URL", fontSize = 12.sp) },
             colors = inputColors,
         )
         OutlinedTextField(
             value = model,
             onValueChange = { model = it },
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().tourTarget("model"),
             label = { Text(stringResource(R.string.model_name), fontSize = 12.sp) },
             colors = inputColors,
         )
@@ -206,6 +211,7 @@ fun SettingsScreen(vm: MainViewModel, onBack: () -> Unit) {
                         status = msg to ok
                     }
                 },
+                modifier = Modifier.tourTarget("test_btn"),
             ) { Text(stringResource(R.string.test_connection), fontSize = 13.sp, color = Muted) }
             Button(
                 onClick = {
@@ -221,6 +227,7 @@ fun SettingsScreen(vm: MainViewModel, onBack: () -> Unit) {
                     apiKey = ""
                     status = context.getString(R.string.saved_now) to true
                 },
+                modifier = Modifier.tourTarget("save_btn"),
                 colors = ButtonDefaults.buttonColors(containerColor = Gold, contentColor = Ink),
             ) { Text(stringResource(R.string.save), fontWeight = FontWeight.Bold) }
         }
@@ -268,7 +275,9 @@ fun SettingsScreen(vm: MainViewModel, onBack: () -> Unit) {
 
         Spacer(Modifier.height(4.dp))
         Text(stringResource(R.string.pair_coyote), fontSize = 13.sp, color = Muted)
-        DeviceSection(vm)
+        Box(modifier = Modifier.tourTarget("connect_coyote").fillMaxWidth()) {
+            DeviceSection(vm)
+        }
 
         Text(stringResource(R.string.role_entry), fontSize = 13.sp, color = Muted)
         ThemeCard(

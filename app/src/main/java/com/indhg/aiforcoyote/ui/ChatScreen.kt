@@ -64,6 +64,7 @@ import com.indhg.aiforcoyote.ui.theme.Line
 import com.indhg.aiforcoyote.ui.theme.Muted
 import com.indhg.aiforcoyote.ui.theme.TextMain
 import com.indhg.aiforcoyote.ui.theme.Warn
+import com.indhg.aiforcoyote.ui.onboarding.tourTarget
 
 @Composable
 fun ChatScreen(vm: MainViewModel, onOpenSettings: () -> Unit) {
@@ -127,7 +128,7 @@ fun ChatScreen(vm: MainViewModel, onOpenSettings: () -> Unit) {
                 )
             }
             TextButton(onClick = { showClearConfirm = true }) { Text(stringResource(R.string.clear), color = Muted) }
-            TextButton(onClick = onOpenSettings) { Text(stringResource(R.string.settings), color = Muted) }
+            TextButton(onClick = onOpenSettings, modifier = Modifier.tourTarget("settings_btn")) { Text(stringResource(R.string.settings), color = Muted) }
         }
 
         // 状态行：A/B 强度 + 自动运行开关
@@ -158,6 +159,7 @@ fun ChatScreen(vm: MainViewModel, onOpenSettings: () -> Unit) {
             Switch(
                 checked = settings.autopilot,
                 onCheckedChange = { vm.toggleAutopilot() },
+                modifier = Modifier.tourTarget("autopilot"),
                 colors = SwitchDefaults.colors(checkedTrackColor = Gold, checkedThumbColor = Ink),
             )
         }
